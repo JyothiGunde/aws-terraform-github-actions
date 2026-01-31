@@ -1,0 +1,30 @@
+
+variable "instance_type" {
+  type = string
+}
+
+variable "vpc_id" {
+  type = string
+}
+
+variable "public_subnets_id" {
+  type = list(string)
+}
+
+variable "lb_tg" {
+  type = set(string)
+}
+
+variable "instance_sg" {
+  type = set(string)
+}
+
+variable "iam_instance_profile" {
+  type = string
+}
+
+locals {
+  common_tags = {
+    project = "demo"
+  }
+}
